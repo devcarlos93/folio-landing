@@ -1,0 +1,124 @@
+---
+import { strings, pricing } from "../i18n/strings";
+
+const s = strings.es;
+const p = pricing.es;
+
+const checkIcon = (stroke: string) => `
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${stroke}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+    <path d="M5 12.5l4.5 4.5L19 7"></path>
+  </svg>`;
+---
+
+<section id="planes" class="bg-card px-5 py-[clamp(72px,10vw,128px)] sm:px-10">
+  <div class="mx-auto max-w-[1120px]">
+    <div class="text-center">
+      <div class="text-sm font-bold uppercase tracking-[.14em] text-ink-soft" data-i18n="plans">{s.plans}</div>
+      <h2
+        class="mx-auto mt-4 max-w-[720px] text-[clamp(36px,5vw,64px)] font-extrabold leading-[1] tracking-[-0.04em] text-wrap-balance"
+        data-i18n="plH"
+      >
+        {s.plH}
+      </h2>
+    </div>
+
+    <div class="mt-8 flex justify-center sm:mt-[clamp(32px,4vw,48px)]">
+      <div class="flex gap-1 rounded-[28px] bg-paper p-1">
+        <button
+          type="button"
+          data-billing-option="annual"
+          class="flex h-12 items-center justify-center rounded-full bg-ink px-5.5 text-base font-bold text-card"
+        >
+          {p.annualLabel}
+        </button>
+        <button
+          type="button"
+          data-billing-option="monthly"
+          class="flex h-12 items-center justify-center rounded-full px-5.5 text-base font-bold text-ink"
+        >
+          {p.monthlyLabel}
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-6 grid items-stretch gap-4 sm:mt-9" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))">
+      <!-- Free -->
+      <div class="flex flex-col gap-5.5 rounded-[32px] bg-paper p-8">
+        <div>
+          <div class="text-xl font-extrabold" data-i18n="free">{s.free}</div>
+          <div class="mt-3.5 flex items-baseline gap-1.5">
+            <span class="text-[52px] font-extrabold leading-none tracking-[-2px]">$0</span>
+          </div>
+          <div class="mt-1.5 text-[15px] text-ink-soft" data-i18n="forever">{s.forever}</div>
+        </div>
+        <div class="grid gap-3 text-base leading-[1.4]">
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#141412")} /><span data-i18n="f1">{s.f1}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#141412")} /><span data-i18n="f2">{s.f2}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#141412")} /><span data-i18n="f2b">{s.f2b}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#141412")} /><span data-i18n="f2c">{s.f2c}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#141412")} /><span data-i18n="f3">{s.f3}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#141412")} /><span data-i18n="f4">{s.f4}</span></div>
+        </div>
+        <a
+          href="#descargar"
+          class="mt-auto flex h-[54px] items-center justify-center rounded-full border-[1.5px] border-ink text-base font-bold"
+          data-i18n="startFree">{s.startFree}</a
+        >
+      </div>
+
+      <!-- Pro -->
+      <div class="relative flex flex-col gap-5.5 rounded-[32px] bg-ink p-8 text-card">
+        <div
+          class="absolute right-7 top-7 flex h-7 items-center rounded-2xl bg-yellow px-3 text-[13px] font-bold text-ink"
+          data-i18n="rec"
+        >
+          {s.rec}
+        </div>
+        <div>
+          <div class="text-xl font-extrabold" data-i18n="pro">{s.pro}</div>
+          <div class="mt-3.5 flex items-baseline gap-1.5">
+            <span class="text-[52px] font-extrabold leading-none tracking-[-2px]" data-pro-price>{p.annual.price}</span>
+            <span class="text-[17px] text-muted" data-pro-per>{p.annual.per}</span>
+          </div>
+          <div class="mt-1.5 text-[15px] text-muted" data-pro-sub>{p.annual.sub}</div>
+        </div>
+        <div class="grid gap-3 text-base leading-[1.4]">
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#ECE67E")} /><span data-i18n="p1">{s.p1}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#ECE67E")} /><span data-i18n="p1b">{s.p1b}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#ECE67E")} /><span data-i18n="p1c">{s.p1c}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#ECE67E")} /><span data-i18n="p2">{s.p2}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#ECE67E")} /><span data-i18n="p3">{s.p3}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#ECE67E")} /><span data-i18n="p4">{s.p4}</span></div>
+        </div>
+        <div class="-mt-2 text-[13px] text-muted" data-i18n="waNote">{s.waNote}</div>
+        <a
+          href="#descargar"
+          class="mt-auto flex h-[54px] items-center justify-center rounded-full bg-card text-base font-bold text-ink"
+          data-pro-cta>{p.annual.cta}</a
+        >
+      </div>
+
+      <!-- Lifetime -->
+      <div class="flex flex-col gap-5.5 rounded-[32px] bg-paper p-8">
+        <div>
+          <div class="text-xl font-extrabold" data-i18n="life">{s.life}</div>
+          <div class="mt-3.5 flex items-baseline gap-1.5">
+            <span class="text-[52px] font-extrabold leading-none tracking-[-2px]">$99</span>
+            <span class="text-[17px] text-ink-soft" data-i18n="once">{s.once}</span>
+          </div>
+          <div class="mt-1.5 text-[15px] text-ink-soft" data-i18n="onceB">{s.onceB}</div>
+        </div>
+        <div class="grid gap-3 text-base leading-[1.4]">
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#141412")} /><span data-i18n="l1">{s.l1}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#141412")} /><span data-i18n="l1b">{s.l1b}</span></div>
+          <div class="flex gap-2.5"><Fragment set:html={checkIcon("#141412")} /><span data-i18n="l2">{s.l2}</span></div>
+        </div>
+        <a
+          href="#descargar"
+          class="mt-auto flex h-[54px] items-center justify-center rounded-full border-[1.5px] border-ink text-base font-bold"
+          data-i18n="buyOnce">{s.buyOnce}</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

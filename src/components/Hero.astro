@@ -1,0 +1,190 @@
+---
+import { Image } from "astro:assets";
+import heroPhone from "../assets/images/img-7647-home.png";
+import { strings } from "../i18n/strings";
+
+const s = strings.es;
+---
+
+<header
+  id="top"
+  class="mx-auto flex max-w-6xl flex-col items-center px-5 pt-10 text-center sm:px-10 sm:pt-[clamp(40px,7vw,88px)]"
+>
+  <div
+    class="flex h-9 items-center gap-2 rounded-full bg-card px-4 text-sm font-semibold text-ink-soft"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path>
+    </svg>
+    <span data-i18n="noAds">{s.noAds}</span>
+  </div>
+
+  <h1
+    class="mt-6.5 max-w-[960px] text-[clamp(46px,8.4vw,108px)] font-extrabold leading-[0.95] tracking-[-0.045em] text-wrap-balance"
+    data-i18n="h1"
+  >
+    {s.h1}
+  </h1>
+
+  <p
+    class="mt-6 max-w-[600px] text-[clamp(18px,1.8vw,22px)] leading-[1.45] text-ink-soft text-wrap-pretty"
+    data-i18n="sub"
+  >
+    {s.sub}
+  </p>
+
+  <div class="mt-[34px] flex flex-wrap justify-center gap-3">
+    <a
+      href="#descargar"
+      class="flex h-[58px] items-center gap-2.5 rounded-full bg-ink px-6 text-[17px] font-bold text-card"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M16.37 12.64c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.38-3.68zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.27z"
+        ></path>
+      </svg>
+      App Store
+    </a>
+    <a
+      href="#descargar"
+      class="flex h-[58px] items-center gap-2.5 rounded-full border-[1.5px] border-ink px-6 text-[17px] font-bold"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M4 2.8v18.4c0 .5.5.8.9.6L20.6 13c.5-.3.5-1 0-1.3L4.9 2.2c-.4-.2-.9.1-.9.6z"></path>
+      </svg>
+      Google Play
+    </a>
+  </div>
+
+  <div class="relative mt-12 h-[clamp(600px,62vw,720px)] w-full max-w-[1000px] sm:mt-[clamp(48px,6vw,72px)]">
+    <div
+      class="absolute bottom-[-120px] left-1/2 aspect-square w-[clamp(520px,80vw,900px)] -translate-x-1/2 rounded-full bg-line"
+    >
+    </div>
+
+    <div
+      class="absolute left-1/2 top-0 z-20 w-[310px] -translate-x-1/2 rounded-[52px] bg-night p-2.5 shadow-[0_40px_80px_rgba(20,20,18,.22),inset_0_0_0_1.5px_#2A2A27]"
+    >
+      <div class="aspect-[1186/2576] overflow-hidden rounded-[42px] bg-paper">
+        <Image
+          src={heroPhone}
+          alt="Folio · Home"
+          width={620}
+          height={1348}
+          class="block h-full w-full object-cover"
+        />
+      </div>
+    </div>
+
+    <div
+      class="animate-float-a absolute left-[clamp(-10px,4vw,60px)] top-[90px] z-30 w-[200px] text-left"
+    >
+      <div class="relative overflow-hidden rounded-[20px] bg-yellow shadow-[0_18px_36px_rgba(20,20,18,.14)]">
+        <div class="grid gap-2.5 px-3.5 pb-1.5 pt-3.5">
+          <div class="flex items-center justify-between">
+            <div class="h-10 w-10 rounded-full border-[1.5px] border-ink bg-white"></div>
+            <div
+              class="flex h-6 items-center rounded-xl bg-white/55 px-2.5 text-[11px] font-bold"
+              data-i18n="tUtil"
+            >
+              {s.tUtil}
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-medium opacity-75" data-i18n="tElec">{s.tElec}</div>
+            <div class="text-base font-extrabold tracking-[-.2px]">Enel</div>
+          </div>
+        </div>
+        <div class="relative h-[18px]">
+          <div class="absolute left-3.5 right-3.5 top-2 border-t-2 border-dashed border-ink/35"></div>
+          <div class="absolute -left-[9px] top-0 h-[18px] w-[18px] rounded-full bg-paper"></div>
+          <div class="absolute -right-[9px] top-0 h-[18px] w-[18px] rounded-full bg-paper"></div>
+        </div>
+        <div class="flex items-end justify-between gap-2 px-3.5 pb-5 pt-1.5">
+          <div>
+            <div class="text-[10px] font-bold uppercase tracking-[.12em] opacity-65" data-i18n="total">{s.total}</div>
+            <div class="text-xl font-extrabold tracking-[-.5px]">$84,30</div>
+            <div class="mt-1 text-xs font-bold" data-i18n="tDue">{s.tDue}</div>
+          </div>
+          <div class="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-ink">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12.5l4.5 4.5L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="absolute inset-x-0 -bottom-px h-2 [background-image:radial-gradient(circle_at_6px_8px,#E9E6DB_4.5px,transparent_5px)] [background-size:12px_8px] [background-repeat:repeat-x]"
+        >
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="animate-float-b absolute right-[clamp(-10px,4vw,50px)] top-[330px] z-30 w-[200px] text-left"
+    >
+      <div class="relative overflow-hidden rounded-[20px] bg-green shadow-[0_18px_36px_rgba(20,20,18,.14)]">
+        <div class="grid gap-2.5 px-3.5 pb-1.5 pt-3.5">
+          <div class="flex items-center justify-between">
+            <div class="h-10 w-10 rounded-full border-[1.5px] border-ink bg-white"></div>
+            <div
+              class="flex h-6 items-center rounded-xl bg-white/55 px-2.5 text-[11px] font-bold"
+              data-i18n="home"
+            >
+              {s.home}
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-medium opacity-75" data-i18n="tWater">{s.tWater}</div>
+            <div class="text-base font-extrabold tracking-[-.2px]">Aguas Andinas</div>
+          </div>
+        </div>
+        <div class="relative h-[18px]">
+          <div class="absolute left-3.5 right-3.5 top-2 border-t-2 border-dashed border-ink/35"></div>
+          <div class="absolute -left-[9px] top-0 h-[18px] w-[18px] rounded-full bg-paper"></div>
+          <div class="absolute -right-[9px] top-0 h-[18px] w-[18px] rounded-full bg-paper"></div>
+        </div>
+        <div class="flex items-end justify-between gap-2 px-3.5 pb-5 pt-1.5">
+          <div>
+            <div class="text-[10px] font-bold uppercase tracking-[.12em] opacity-65" data-i18n="total">{s.total}</div>
+            <div class="text-xl font-extrabold tracking-[-.5px] line-through">$32,10</div>
+            <div class="mt-1 text-xs font-bold" data-i18n="tBy">{s.tBy}</div>
+          </div>
+          <div class="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-ink bg-ink text-card">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12.5l4.5 4.5L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="absolute inset-x-0 -bottom-px h-2 [background-image:radial-gradient(circle_at_6px_8px,#E9E6DB_4.5px,transparent_5px)] [background-size:12px_8px] [background-repeat:repeat-x]"
+        >
+        </div>
+        <div
+          class="absolute right-2.5 top-[60px] rotate-[-14deg] rounded-md border-2 border-ink px-2 py-0.5 text-xs font-extrabold uppercase tracking-[.12em] opacity-75"
+          data-i18n="paid"
+        >
+          {s.paid}
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="animate-float-c absolute right-[clamp(-20px,1vw,10px)] top-[130px] z-30 flex w-[250px] gap-3 rounded-[22px] bg-card px-3.5 py-3 text-left shadow-[0_18px_36px_rgba(20,20,18,.12)]"
+    >
+      <div class="h-9 w-9 shrink-0 overflow-hidden rounded-[9px] bg-brand">
+        <svg width="100%" height="100%" viewBox="0 0 100 100">
+          <path d="M50 14 78 28.5 50 43 22 28.5z" fill="#F6F4EE" stroke="#F6F4EE" stroke-width="3" stroke-linejoin="round"></path>
+          <path d="M19 36.5 46 50.5 46 85 19 71z" fill="#F6F4EE" stroke="#F6F4EE" stroke-width="3" stroke-linejoin="round"></path>
+          <path d="M54 50.5 81 36.5 81 71 54 85z" fill="#141412" stroke="#141412" stroke-width="3" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex justify-between text-xs text-ink-soft">
+          <span class="font-bold text-ink">Folio</span>
+          <span data-i18n="now">{s.now}</span>
+        </div>
+        <div class="mt-0.5 text-sm font-semibold leading-tight" data-i18n="notif">{s.notif}</div>
+      </div>
+    </div>
+  </div>
+</header>

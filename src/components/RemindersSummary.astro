@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import summaryPhone from "../assets/images/img-7647-summary.png";
+import { strings } from "../i18n/strings";
+
+const s = strings.es;
+---
+
+<section class="px-5 pb-[clamp(72px,10vw,128px)] sm:px-10">
+  <div
+    class="mx-auto grid max-w-[1120px] gap-5"
+    style="grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))"
+  >
+    <div class="flex flex-col gap-7 rounded-[36px] bg-card p-7 sm:p-[clamp(28px,4vw,44px)]">
+      <div>
+        <h3
+          class="text-[clamp(28px,3vw,38px)] font-extrabold leading-[1.05] tracking-[-0.035em] text-wrap-balance"
+          data-i18n="remH"
+        >
+          {s.remH}
+        </h3>
+        <p class="mt-3 text-[17px] leading-[1.5] text-ink-soft text-wrap-pretty" data-i18n="remB">{s.remB}</p>
+      </div>
+      <div class="mt-auto grid gap-2.5">
+        <div class="flex items-center gap-3 rounded-[20px] bg-paper px-3.5 py-3">
+          <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#25D366]">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z" fill="#FFFFFF"></path>
+            </svg>
+          </div>
+          <div class="text-[15px] leading-[1.35]"><b>WhatsApp</b> · <span data-i18n="wa">{s.wa}</span></div>
+        </div>
+        <div class="flex items-center gap-3 rounded-[20px] bg-paper px-3.5 py-3">
+          <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#229ED9]">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M20.6 4.4 2.9 11.2c-.9.4-.9 1.4 0 1.7l4.4 1.4 1.7 5.3c.2.6 1 .8 1.4.3l2.4-2.2 4.6 3.4c.6.4 1.4.1 1.6-.6l3-14.3c.2-.9-.6-1.5-1.4-1.2z"
+                fill="#FFFFFF"></path>
+            </svg>
+          </div>
+          <div class="text-[15px] leading-[1.35]"><b>Telegram</b> · <span data-i18n="tg">{s.tg}</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-7 overflow-hidden rounded-[36px] bg-ink px-7 pt-7 text-card sm:px-[clamp(28px,4vw,44px)] sm:pt-[clamp(28px,4vw,44px)]">
+      <div>
+        <h3
+          class="text-[clamp(28px,3vw,38px)] font-extrabold leading-[1.05] tracking-[-0.035em] text-wrap-balance"
+          data-i18n="sumH"
+        >
+          {s.sumH}
+        </h3>
+        <p class="mt-3 text-[17px] leading-[1.5] text-muted text-wrap-pretty" data-i18n="sumB">{s.sumB}</p>
+      </div>
+      <div class="mt-auto flex justify-center">
+        <div
+          class="h-[300px] w-[270px] overflow-hidden rounded-t-[42px] border-[10px] border-b-0 border-night-soft bg-night-soft"
+        >
+          <div class="h-full overflow-hidden rounded-t-[32px]">
+            <Image
+              src={summaryPhone}
+              alt="Folio · Total del mes"
+              width={540}
+              height={1174}
+              class="block h-auto w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

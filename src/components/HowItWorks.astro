@@ -1,0 +1,130 @@
+---
+import { strings } from "../i18n/strings";
+
+const s = strings.es;
+---
+
+<section id="como" class="relative bg-card px-5 py-[clamp(72px,10vw,128px)] sm:px-10">
+  <div class="mx-auto max-w-[1120px]">
+    <div class="text-sm font-bold uppercase tracking-[.14em] text-ink-soft" data-i18n="how">{s.how}</div>
+    <h2
+      class="mt-4 max-w-[720px] text-[clamp(36px,5vw,64px)] font-extrabold leading-[1] tracking-[-0.04em] text-wrap-balance"
+      data-i18n="howH"
+    >
+      {s.howH}
+    </h2>
+
+    <div class="mt-10 grid gap-5 sm:mt-[clamp(40px,5vw,64px)]" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+      <div class="flex flex-col gap-5">
+        <div class="relative h-[300px] overflow-hidden rounded-[32px] bg-paper">
+          <div
+            class="absolute left-1/2 top-[34px] flex h-[230px] w-[170px] -translate-x-1/2 -rotate-3 flex-col gap-[9px] rounded-[14px] bg-white p-4 shadow-[0_18px_30px_rgba(0,0,0,.1)]"
+          >
+            <div class="h-2 w-[60%] rounded bg-ink"></div>
+            <div class="h-1 rounded-sm bg-muted"></div>
+            <div class="h-1 rounded-sm bg-muted"></div>
+            <div class="h-1 w-[70%] rounded-sm bg-muted"></div>
+            <div class="mt-3 h-1 rounded-sm bg-muted"></div>
+            <div class="h-1 w-[80%] rounded-sm bg-muted"></div>
+            <div class="ml-auto mt-auto h-2.5 w-[50%] rounded bg-ink"></div>
+            <div
+              class="absolute -left-3 -right-3 top-[110px] h-[3px] bg-brand shadow-[0_0_16px_5px_rgba(226,38,29,.35)]"
+            >
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3.5">
+          <span class="text-[15px] font-extrabold text-brand">01</span>
+          <div>
+            <div class="text-2xl font-extrabold tracking-[-.6px]" data-i18n="s1t">{s.s1t}</div>
+            <div class="mt-1.5 text-[17px] leading-[1.45] text-ink-soft text-wrap-pretty" data-i18n="s1b">{s.s1b}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        <div class="flex h-[300px] items-center justify-center rounded-[32px] bg-paper p-6">
+          <div class="grid w-full max-w-[270px] rounded-[22px] bg-white px-4 py-2 shadow-[0_18px_30px_rgba(0,0,0,.08)]">
+            <div class="flex justify-between gap-2.5 border-b border-ink/10 py-2.5 text-sm">
+              <span class="text-ink-soft">{s.fCo}</span>
+              <span class="font-bold">Air-e</span>
+            </div>
+            <div class="flex justify-between gap-2.5 border-b border-ink/10 py-2.5 text-sm">
+              <span class="text-ink-soft">NIT</span>
+              <span class="font-bold">901.380.930-2</span>
+            </div>
+            <div class="flex justify-between gap-2.5 border-b border-ink/10 py-2.5 text-sm">
+              <span class="text-ink-soft">{s.fSvc}</span>
+              <span class="font-bold" data-i18n="energy">{s.energy}</span>
+            </div>
+            <div class="flex justify-between gap-2.5 border-b border-ink/10 py-2.5 text-sm">
+              <span class="text-ink-soft">{s.fDue}</span>
+              <span class="font-bold" data-i18n="fDate">{s.fDate}</span>
+            </div>
+            <div class="flex items-baseline justify-between gap-2.5 pb-2 pt-3 text-sm">
+              <span class="text-ink-soft">{s.total}</span>
+              <span class="text-[22px] font-extrabold tracking-[-.5px]">$187.450</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3.5">
+          <span class="text-[15px] font-extrabold text-brand">02</span>
+          <div>
+            <div class="text-2xl font-extrabold tracking-[-.6px]" data-i18n="s2t">{s.s2t}</div>
+            <div class="mt-1.5 text-[17px] leading-[1.45] text-ink-soft text-wrap-pretty" data-i18n="s2b">{s.s2b}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        <div class="flex h-[300px] items-center justify-center rounded-[32px] bg-paper">
+          <div class="relative w-[200px] -rotate-3 overflow-hidden rounded-[20px] bg-pink shadow-[0_18px_30px_rgba(0,0,0,.1)]">
+            <div class="grid gap-2.5 px-3.5 pb-1.5 pt-3.5">
+              <div class="flex items-center justify-between">
+                <div class="h-10 w-10 rounded-full border-[1.5px] border-ink bg-white"></div>
+                <div class="flex h-6 items-center rounded-xl bg-white/55 px-2.5 text-[11px] font-bold" data-i18n="energy">{s.energy}</div>
+              </div>
+              <div>
+                <div class="text-xs font-medium opacity-75" data-i18n="energy">{s.energy}</div>
+                <div class="text-base font-extrabold tracking-[-.2px]">Air-e</div>
+              </div>
+            </div>
+            <div class="relative h-[18px]">
+              <div class="absolute left-3.5 right-3.5 top-2 border-t-2 border-dashed border-ink/35"></div>
+              <div class="absolute -left-[9px] top-0 h-[18px] w-[18px] rounded-full bg-paper"></div>
+              <div class="absolute -right-[9px] top-0 h-[18px] w-[18px] rounded-full bg-paper"></div>
+            </div>
+            <div class="flex items-end justify-between gap-2 px-3.5 pb-5 pt-1.5">
+              <div>
+                <div class="text-[10px] font-bold uppercase tracking-[.12em] opacity-65" data-i18n="total">{s.total}</div>
+                <div class="text-xl font-extrabold tracking-[-.5px] line-through">$187.450</div>
+              </div>
+              <div class="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-ink bg-ink text-card">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12.5l4.5 4.5L19 7"></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="absolute inset-x-0 -bottom-px h-2 [background-image:radial-gradient(circle_at_6px_8px,#E9E6DB_4.5px,transparent_5px)] [background-size:12px_8px] [background-repeat:repeat-x]"
+            >
+            </div>
+            <div
+              class="absolute right-2.5 top-[60px] rotate-[-14deg] rounded-md border-2 border-ink px-2 py-0.5 text-xs font-extrabold uppercase tracking-[.12em] opacity-75"
+              data-i18n="paid"
+            >
+              {s.paid}
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3.5">
+          <span class="text-[15px] font-extrabold text-brand">03</span>
+          <div>
+            <div class="text-2xl font-extrabold tracking-[-.6px]" data-i18n="s3t">{s.s3t}</div>
+            <div class="mt-1.5 text-[17px] leading-[1.45] text-ink-soft text-wrap-pretty" data-i18n="s3b">{s.s3b}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

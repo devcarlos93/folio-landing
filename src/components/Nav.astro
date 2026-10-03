@@ -1,0 +1,36 @@
+---
+import Logo from "./Logo.astro";
+import { strings } from "../i18n/strings";
+
+const s = strings.es;
+---
+
+<nav class="mx-auto flex max-w-6xl items-center justify-between gap-5 px-5 py-[22px] sm:px-10">
+  <Logo />
+  <div class="flex flex-wrap items-center justify-end gap-3.5 text-base font-semibold sm:gap-8">
+    <a href="#como" data-i18n="how">{s.how}</a>
+    <a href="#espacios" data-i18n="spaces">{s.spaces}</a>
+    <a href="#planes" data-i18n="plans">{s.plans}</a>
+    <div class="flex gap-0.5 rounded-full bg-line p-[3px]">
+      <button
+        type="button"
+        data-lang-option="es"
+        class="flex h-[34px] min-w-[44px] items-center justify-center rounded-full bg-ink px-2.5 text-sm font-bold text-card"
+      >
+        ES
+      </button>
+      <button
+        type="button"
+        data-lang-option="en"
+        class="flex h-[34px] min-w-[44px] items-center justify-center rounded-full px-2.5 text-sm font-bold text-ink"
+      >
+        EN
+      </button>
+    </div>
+    <a
+      href="#descargar"
+      data-i18n="download"
+      class="flex h-11 items-center rounded-full bg-ink px-5 text-card">{s.download}</a
+    >
+  </div>
+</nav>

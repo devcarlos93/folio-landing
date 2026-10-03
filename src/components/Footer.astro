@@ -1,0 +1,19 @@
+---
+import Logo from "./Logo.astro";
+import { strings } from "../i18n/strings";
+
+const s = strings.es;
+---
+
+<footer class="bg-ink px-5 py-9 text-muted sm:px-10">
+  <div class="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-5 text-[15px]">
+    <Logo size={30} textSize="text-xl" dark />
+    <div class="flex flex-wrap gap-6">
+      <a href="/privacidad" class="text-muted" data-i18n="privacy">{s.privacy}</a>
+      <a href="/terminos" class="text-muted" data-i18n="terms">{s.terms}</a>
+      <a href="#" class="text-muted" data-i18n="delAcc">{s.delAcc}</a>
+      <a href="mailto:info@getfolioapp.com" class="text-muted" data-i18n="support">{s.support}</a>
+    </div>
+    <div>© 2026 Folio</div>
+  </div>
+</footer>
