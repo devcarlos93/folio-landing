@@ -29,6 +29,10 @@ function applyLang() {
     el.classList.toggle("text-ink", !isActive);
   });
 
+  document.querySelectorAll<HTMLElement>("[data-lang-block]").forEach((el) => {
+    el.classList.toggle("hidden", el.dataset.langBlock !== lang);
+  });
+
   applyPricing();
 }
 

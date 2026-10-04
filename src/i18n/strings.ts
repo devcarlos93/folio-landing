@@ -78,6 +78,7 @@ export const strings = {
     tg: "Netflix se cobra en 3 días.",
     biz: "Negocio",
     delAcc: "Eliminar cuenta",
+    back: "Volver al inicio",
   },
   en: {
     how: "How it works",
@@ -156,6 +157,7 @@ export const strings = {
     tg: "Netflix renews in 3 days.",
     biz: "Business",
     delAcc: "Delete account",
+    back: "Back to home",
   },
 } as const satisfies Record<Lang, Record<string, string>>;
 
