@@ -1,0 +1,508 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LegalNav from "../components/LegalNav.astro";
+import Footer from "../components/Footer.astro";
+
+const providers = [
+  {
+    name: "Supabase",
+    es: "Base de datos, autenticación, almacenamiento de fotos y funciones de servidor",
+    en: "Database, authentication, photo storage and server functions",
+    locEs: "Estados Unidos (Virginia)",
+    locEn: "United States (Virginia)",
+  },
+  {
+    name: "OpenAI",
+    es: "Lectura de facturas con IA. Recibe la foto de la factura solo cuando pides leerla",
+    en: "AI bill reading. It receives the bill photo only when you ask to read it",
+    locEs: "Estados Unidos",
+    locEn: "United States",
+  },
+  {
+    name: "Twilio y Meta (WhatsApp)",
+    nameEn: "Twilio and Meta (WhatsApp)",
+    es: "Envío de avisos por WhatsApp: tu número y el contenido del aviso",
+    en: "Sending WhatsApp alerts: your number and the alert content",
+    locEs: "Estados Unidos y otros países",
+    locEn: "United States and other countries",
+  },
+  {
+    name: "Telegram",
+    es: "Envío de avisos por Telegram",
+    en: "Sending Telegram alerts",
+    locEs: "Según Telegram",
+    locEn: "Per Telegram",
+  },
+  {
+    name: "Apple y Google",
+    nameEn: "Apple and Google",
+    es: "Inicio de sesión, compras y suscripciones",
+    en: "Sign-in, purchases and subscriptions",
+    locEs: "Según cada proveedor",
+    locEn: "Per each provider",
+  },
+  {
+    name: "RevenueCat",
+    es: "Gestión de suscripciones: identificador de cuenta y estado de la compra, sin datos de tarjeta",
+    en: "Subscription management: account identifier and purchase status, no card data",
+    locEs: "Estados Unidos",
+    locEn: "United States",
+  },
+  {
+    name: "Vercel",
+    es: "Alojamiento del sitio web",
+    en: "Website hosting",
+    locEs: "Estados Unidos y otros países",
+    locEn: "United States and other countries",
+  },
+];
+---
+
+<Layout
+  title="Política de privacidad de Folio"
+  description="Política de privacidad de la app Folio y del sitio getfolioapp.com."
+>
+  <LegalNav />
+
+  <!-- ES -->
+  <div data-lang-block="es">
+    <header class="mx-auto max-w-[760px] px-5 pb-8 pt-10 sm:px-10 sm:pb-12 sm:pt-[clamp(40px,6vw,72px)]">
+      <div class="text-sm font-bold uppercase tracking-[.14em] text-ink-soft">Legal</div>
+      <h1 class="mt-4 text-[clamp(40px,6vw,72px)] font-extrabold leading-[1] tracking-[-0.045em] text-wrap-balance">
+        Política de privacidad de Folio
+      </h1>
+      <div class="mt-4.5 text-base text-ink-soft">Última actualización: 3 de octubre de 2026</div>
+    </header>
+
+    <main class="bg-card px-5 py-10 sm:px-10 sm:py-[clamp(40px,6vw,72px)] sm:pb-[clamp(72px,9vw,112px)]">
+      <article class="mx-auto flex max-w-[720px] flex-col gap-11 text-[17px] leading-[1.6] text-[#2B2A26]">
+        <p class="text-[19px] text-ink text-wrap-pretty">
+          Esta política explica qué datos trata Folio, para qué, con quién se comparten y cómo puedes ejercer tus
+          derechos. Aplica a la app Folio para iPhone y Android y al sitio getfolioapp.com.
+        </p>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">1.</span> Responsable del tratamiento</h2>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Responsable: Carlos Villadiego, persona natural.</li>
+            <li>Domicilio: Medellín, Colombia.</li>
+            <li>Correo de contacto: <a href="mailto:info@folioapp.lat" class="underline underline-offset-[3px]">info@folioapp.lat</a></li>
+          </ul>
+          <p class="text-wrap-pretty">
+            Esta política sigue la Ley 1581 de 2012 y el Decreto 1377 de 2013 de Colombia. Si vives en la Unión
+            Europea, el Espacio Económico Europeo o el Reino Unido, también aplica el Reglamento General de
+            Protección de Datos (RGPD), como se explica en la sección 9.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">2.</span> Datos que tratamos</h2>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Datos de la cuenta</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Correo y nombre.</li>
+            <li>Si inicias sesión con Apple o Google, el identificador que ese proveedor te asigna. Si usas "Ocultar mi correo" de Apple, recibimos la dirección de relevo, no tu correo real.</li>
+            <li>Si inicias sesión con correo, tu contraseña queda cifrada por nuestro proveedor de autenticación; nunca la vemos.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Lo que registras en la app</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Espacios, categorías, facturas y gastos recurrentes: empresa, NIT o identificación del proveedor, servicio, referencia, montos, moneda, fechas de vencimiento y pago, notas y estado de pago.</li>
+            <li>Fotos de facturas y comprobantes de pago que tomes o adjuntes.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Espacios compartidos</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Si compartes un espacio o te unes a uno, la otra persona ve tu nombre y todo lo del espacio: facturas, fotos, quién creó cada factura y quién la pagó.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Avisos por chat (opcional)</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Para WhatsApp, tu número de teléfono.</li>
+            <li>Para Telegram, el identificador del chat.</li>
+            <li>Tu idioma, zona horaria, la hora de envío que elijas y un registro de los avisos enviados.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Uso y plan</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Cuántas lecturas con IA usaste este mes.</li>
+            <li>Tu plan y su vencimiento. Las compras las procesa Apple o Google; nunca recibimos los datos de tu tarjeta.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Lo que no tratamos</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>No nos conectamos a tu cuenta bancaria.</li>
+            <li>No mostramos anuncios.</li>
+            <li>No vendemos tus datos ni los usamos para hacerte perfiles con fines de mercadeo.</li>
+            <li>La región de tu teléfono se usa solo dentro de la app para mostrarte las opciones disponibles en tu país; no se envía a nuestros servidores.</li>
+          </ul>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">3.</span> Para qué usamos tus datos</h2>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Para prestar el servicio: guardar tus facturas, sincronizarlas entre tus dispositivos y con quien compartas un espacio, y respaldar tus fotos en la nube si tu plan lo incluye.</li>
+            <li>Para leer facturas con IA, cuando lo pidas, y completar los campos automáticamente.</li>
+            <li>Para enviarte recordatorios en la app y, si los activas, por Telegram o WhatsApp. Esto incluye el aviso de que tu pareja pagó una factura en un espacio compartido.</li>
+            <li>Para aplicar los límites de cada plan y el uso justo de los avisos por WhatsApp.</li>
+            <li>Para atender tus solicitudes de soporte y de derechos sobre tus datos.</li>
+            <li>Para mantener el servicio seguro y prevenir abusos, por ejemplo limitando los intentos de código de invitación.</li>
+          </ul>
+          <p class="text-wrap-pretty">
+            Tratamos tus datos con tu consentimiento, que das al crear una cuenta y aceptar esta política, y porque
+            es necesario para prestarte el servicio que solicitaste.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">4.</span> Con quién los compartimos</h2>
+          <p class="text-wrap-pretty">
+            Solo con los proveedores que necesitamos para operar el servicio. Cada uno trata los datos por nuestro
+            encargo y bajo sus propios términos de seguridad:
+          </p>
+          <div class="overflow-x-auto rounded-[20px] bg-paper text-[15px] leading-[1.45]">
+            <div class="min-w-[560px]">
+              <div
+                class="grid gap-4 border-b border-ink/10 px-4.5 py-3.5 text-xs font-bold uppercase tracking-[.12em] text-ink-soft"
+                style="grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,1fr)"
+              >
+                <div>Proveedor</div>
+                <div>Para qué</div>
+                <div>Ubicación</div>
+              </div>
+              {
+                providers.map((p, i) => (
+                  <div
+                    class:list={["grid gap-4 px-4.5 py-3.5", i < providers.length - 1 && "border-b border-ink/10"]}
+                    style="grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,1fr)"
+                  >
+                    <div class="font-bold text-ink">{p.name}</div>
+                    <div>{p.es}</div>
+                    <div>{p.locEs}</div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+          <p class="text-wrap-pretty">
+            Los avisos por Telegram y WhatsApp incluyen la empresa y el monto de la factura. Esos mensajes pasan por
+            los servidores de Telegram o WhatsApp y por nuestro proveedor de mensajería.
+          </p>
+          <p class="text-wrap-pretty">Fuera de esto, solo compartimos datos si una autoridad competente lo exige legalmente.</p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">5.</span> Transferencias internacionales</h2>
+          <p class="text-wrap-pretty">
+            Nuestros proveedores están principalmente en Estados Unidos. Al aceptar esta política autorizas la
+            transferencia de tus datos a esos países para los fines descritos. Elegimos proveedores que aplican
+            medidas de seguridad reconocidas, como cifrado en tránsito y en reposo, y controles de acceso.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">6.</span> Cuánto tiempo los conservamos</h2>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li><b>Mientras tengas una cuenta:</b> conservamos tus datos.</li>
+            <li><b>Fotos en la nube:</b> si tu plan de pago vence, quedan en solo lectura durante 6 meses desde el vencimiento y luego se borran de la nube. Las copias en tu teléfono no se tocan.</li>
+            <li><b>Cuando eliminas tu cuenta:</b> todo se borra de inmediato. Las copias de respaldo de nuestro proveedor pueden conservar datos hasta por 30 días más, hasta que se reemplazan.</li>
+            <li><b>Espacios compartidos:</b> si eliminas tu cuenta, los espacios compartidos que creaste pasan a tu pareja, con las facturas que creaste ahí y sin tus fotos. En espacios de otras personas, las facturas que creaste quedan con el dueño del espacio.</li>
+          </ul>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">7.</span> Tus derechos</h2>
+          <p class="text-wrap-pretty">Según la Ley 1581 de 2012 puedes:</p>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>conocer, actualizar y rectificar tus datos;</li>
+            <li>solicitar prueba del consentimiento que nos diste;</li>
+            <li>ser informado sobre el uso que se le ha dado a tus datos;</li>
+            <li>revocar tu consentimiento y pedir que se eliminen tus datos;</li>
+            <li>acceder a tus datos de forma gratuita;</li>
+            <li>presentar quejas ante la Superintendencia de Industria y Comercio (SIC) de Colombia.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Cómo ejercerlos</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li><b>Ver y corregir:</b> en la app, en cualquier momento.</li>
+            <li><b>Exportar tus facturas:</b> en Ajustes → Exportar CSV.</li>
+            <li><b>Eliminar tu cuenta y tus datos:</b> en Ajustes → Eliminar cuenta, o escribiendo a <a href="mailto:info@folioapp.lat" class="underline underline-offset-[3px]">info@folioapp.lat</a> desde el correo de tu cuenta.</li>
+            <li><b>Cualquier otra solicitud:</b> escribe a <a href="mailto:info@folioapp.lat" class="underline underline-offset-[3px]">info@folioapp.lat</a>.</li>
+          </ul>
+          <p class="text-wrap-pretty">
+            Respondemos las consultas en 10 días hábiles y los reclamos en 15 días hábiles, como lo exige la ley.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">8.</span> Seguridad</h2>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Las comunicaciones están cifradas (HTTPS).</li>
+            <li>La base de datos aplica reglas de acceso por usuario: solo tú y quien comparta un espacio contigo pueden ver sus datos.</li>
+            <li>Las fotos se guardan en almacenamiento privado.</li>
+            <li>Tu sesión se guarda en el almacenamiento seguro del teléfono.</li>
+          </ul>
+          <p class="text-wrap-pretty">
+            Ningún sistema es infalible. Si detectamos un incidente que afecte tus datos, te avisaremos y lo
+            reportaremos a las autoridades cuando la ley lo exija.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">9.</span> Usuarios en la UE, el EEE y el Reino Unido</h2>
+          <p class="text-wrap-pretty">Tratamos tus datos con estas bases legales:</p>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>ejecución del contrato (prestarte el servicio);</li>
+            <li>tu consentimiento (avisos por chat y lectura con IA), que puedes retirar en cualquier momento;</li>
+            <li>nuestro interés legítimo en mantener el servicio seguro.</li>
+          </ul>
+          <p class="text-wrap-pretty">
+            Tienes los derechos de acceso, rectificación, supresión, limitación, oposición y portabilidad, y puedes
+            presentar una queja ante tu autoridad de protección de datos. Las transferencias a Estados Unidos se
+            apoyan en las garantías que ofrecen nuestros proveedores, como las cláusulas contractuales tipo de la
+            Comisión Europea.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">10.</span> Menores de edad</h2>
+          <p class="text-wrap-pretty">
+            Folio no está dirigido a menores de 14 años. Si eres menor de edad, usa Folio con la autorización de tu
+            representante legal. Si llegamos a saber que tenemos datos de un menor de 14 años sin esa autorización,
+            los eliminaremos.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">11.</span> Cambios a esta política</h2>
+          <p class="text-wrap-pretty">
+            Si hacemos cambios importantes, te avisaremos en la app o por correo antes de que entren en vigor. La
+            fecha en la parte superior muestra la última actualización.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">12.</span> Contacto</h2>
+          <p class="text-wrap-pretty">
+            Carlos Villadiego · Medellín, Colombia ·
+            <a href="mailto:info@folioapp.lat" class="underline underline-offset-[3px]">info@folioapp.lat</a>
+          </p>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <!-- EN -->
+  <div data-lang-block="en" class="hidden">
+    <header class="mx-auto max-w-[760px] px-5 pb-8 pt-10 sm:px-10 sm:pb-12 sm:pt-[clamp(40px,6vw,72px)]">
+      <div class="text-sm font-bold uppercase tracking-[.14em] text-ink-soft">Legal</div>
+      <h1 class="mt-4 text-[clamp(40px,6vw,72px)] font-extrabold leading-[1] tracking-[-0.045em] text-wrap-balance">
+        Folio Privacy Policy
+      </h1>
+      <div class="mt-4.5 text-base text-ink-soft">Last updated: October 3, 2026</div>
+    </header>
+
+    <main class="bg-card px-5 py-10 sm:px-10 sm:py-[clamp(40px,6vw,72px)] sm:pb-[clamp(72px,9vw,112px)]">
+      <article class="mx-auto flex max-w-[720px] flex-col gap-11 text-[17px] leading-[1.6] text-[#2B2A26]">
+        <p class="text-[19px] text-ink text-wrap-pretty">
+          This policy explains what data Folio processes, why, who it is shared with and how you can exercise your
+          rights. It applies to the Folio app for iPhone and Android and to the getfolioapp.com website.
+        </p>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">1.</span> Data controller</h2>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Controller: Carlos Villadiego, individual.</li>
+            <li>Address: Medellín, Colombia.</li>
+            <li>Contact email: <a href="mailto:info@folioapp.lat" class="underline underline-offset-[3px]">info@folioapp.lat</a></li>
+          </ul>
+          <p class="text-wrap-pretty">
+            This policy follows Colombian Law 1581 of 2012 and Decree 1377 of 2013. If you live in the European
+            Union, the European Economic Area or the United Kingdom, the General Data Protection Regulation (GDPR)
+            also applies, as explained in section 9.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">2.</span> Data we process</h2>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Account data</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Email and name.</li>
+            <li>If you sign in with Apple or Google, the identifier that provider assigns to you. If you use Apple's "Hide My Email", we receive the relay address, not your real email.</li>
+            <li>If you sign in with email, your password is stored encrypted by our authentication provider; we never see it.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">What you record in the app</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Spaces, categories, bills and recurring bills: company, tax ID or provider identification, service, reference, amounts, currency, due and payment dates, notes and payment status.</li>
+            <li>Photos of bills and payment receipts you take or attach.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Shared spaces</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>If you share a space or join one, the other person sees your name and everything in the space: bills, photos, who created each bill and who paid it.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Chat alerts (optional)</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>For WhatsApp, your phone number.</li>
+            <li>For Telegram, the chat identifier.</li>
+            <li>Your language, time zone, the sending time you choose and a log of the alerts sent.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">Usage and plan</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>How many AI reads you used this month.</li>
+            <li>Your plan and its expiry. Purchases are processed by Apple or Google; we never receive your card details.</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">What we don't process</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>We don't connect to your bank account.</li>
+            <li>We don't show ads.</li>
+            <li>We don't sell your data or use it to profile you for marketing.</li>
+            <li>Your phone's region setting is used only inside the app to show the options available in your country; it isn't sent to our servers.</li>
+          </ul>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">3.</span> Why we use your data</h2>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>To provide the service: store your bills, sync them across your devices and with anyone you share a space with, and back up your photos to the cloud if your plan includes it.</li>
+            <li>To read bills with AI, when you ask for it, and fill in the fields automatically.</li>
+            <li>To send you reminders in the app and, if you turn them on, through Telegram or WhatsApp. This includes the alert that your partner paid a bill in a shared space.</li>
+            <li>To apply each plan's limits and the fair use of WhatsApp alerts.</li>
+            <li>To handle your support and data-rights requests.</li>
+            <li>To keep the service secure and prevent abuse, for example by limiting invite code attempts.</li>
+          </ul>
+          <p class="text-wrap-pretty">
+            We process your data with your consent, given when you create an account and accept this policy, and
+            because it is necessary to provide the service you asked for.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">4.</span> Who we share it with</h2>
+          <p class="text-wrap-pretty">
+            Only with the providers we need to run the service. Each one processes data on our behalf and under its
+            own security terms:
+          </p>
+          <div class="overflow-x-auto rounded-[20px] bg-paper text-[15px] leading-[1.45]">
+            <div class="min-w-[560px]">
+              <div
+                class="grid gap-4 border-b border-ink/10 px-4.5 py-3.5 text-xs font-bold uppercase tracking-[.12em] text-ink-soft"
+                style="grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,1fr)"
+              >
+                <div>Provider</div>
+                <div>Purpose</div>
+                <div>Location</div>
+              </div>
+              {
+                providers.map((p, i) => (
+                  <div
+                    class:list={["grid gap-4 px-4.5 py-3.5", i < providers.length - 1 && "border-b border-ink/10"]}
+                    style="grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,1fr)"
+                  >
+                    <div class="font-bold text-ink">{p.nameEn ?? p.name}</div>
+                    <div>{p.en}</div>
+                    <div>{p.locEn}</div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+          <p class="text-wrap-pretty">
+            Telegram and WhatsApp alerts include the bill's company and amount. Those messages go through
+            Telegram's or WhatsApp's servers and our messaging provider.
+          </p>
+          <p class="text-wrap-pretty">Beyond that, we only share data if a competent authority legally requires it.</p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">5.</span> International transfers</h2>
+          <p class="text-wrap-pretty">
+            Our providers are mainly in the United States. By accepting this policy you authorize the transfer of
+            your data to those countries for the purposes described. We choose providers that apply recognized
+            security measures, such as encryption in transit and at rest and access controls.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">6.</span> How long we keep it</h2>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li><b>While you have an account:</b> we keep your data.</li>
+            <li><b>Cloud photos:</b> if your paid plan expires, they become read-only for 6 months from the expiry date and are then deleted from the cloud. Copies on your phone are not touched.</li>
+            <li><b>When you delete your account:</b> everything is deleted immediately. Our provider's backups may keep data for up to 30 more days, until they are replaced.</li>
+            <li><b>Shared spaces:</b> if you delete your account, the shared spaces you created go to your partner, with the bills you created there and without your photos. In other people's spaces, the bills you created stay with the space owner.</li>
+          </ul>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">7.</span> Your rights</h2>
+          <p class="text-wrap-pretty">Under Law 1581 of 2012 you can:</p>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>access, update and correct your data;</li>
+            <li>ask for proof of the consent you gave us;</li>
+            <li>learn how your data has been used;</li>
+            <li>withdraw your consent and ask for your data to be deleted;</li>
+            <li>access your data free of charge;</li>
+            <li>file complaints with Colombia's Superintendence of Industry and Commerce (SIC).</li>
+          </ul>
+          <h3 class="mt-1.5 text-lg font-extrabold text-ink">How to exercise them</h3>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li><b>View and correct:</b> in the app, at any time.</li>
+            <li><b>Export your bills:</b> in Settings → Export CSV.</li>
+            <li><b>Delete your account and your data:</b> in Settings → Delete account, or by writing to <a href="mailto:info@folioapp.lat" class="underline underline-offset-[3px]">info@folioapp.lat</a> from your account's email.</li>
+            <li><b>Any other request:</b> write to <a href="mailto:info@folioapp.lat" class="underline underline-offset-[3px]">info@folioapp.lat</a>.</li>
+          </ul>
+          <p class="text-wrap-pretty">
+            We answer inquiries within 10 business days and complaints within 15 business days, as required by law.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">8.</span> Security</h2>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>Communications are encrypted (HTTPS).</li>
+            <li>The database enforces per-user access rules: only you and anyone sharing a space with you can see its data.</li>
+            <li>Photos are kept in private storage.</li>
+            <li>Your session is stored in the phone's secure storage.</li>
+          </ul>
+          <p class="text-wrap-pretty">
+            No system is infallible. If we detect an incident affecting your data, we will notify you and report it
+            to the authorities when the law requires it.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">9.</span> Users in the EU, EEA and UK</h2>
+          <p class="text-wrap-pretty">We process your data on these legal bases:</p>
+          <ul class="flex list-disc flex-col gap-2 pl-[22px]">
+            <li>performance of the contract (providing the service);</li>
+            <li>your consent (chat alerts and AI reading), which you can withdraw at any time;</li>
+            <li>our legitimate interest in keeping the service secure.</li>
+          </ul>
+          <p class="text-wrap-pretty">
+            You have the rights of access, rectification, erasure, restriction, objection and portability, and you
+            can complain to your data protection authority. Transfers to the United States rely on the safeguards
+            offered by our providers, such as the European Commission's standard contractual clauses.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">10.</span> Minors</h2>
+          <p class="text-wrap-pretty">
+            Folio is not intended for children under 14. If you are a minor, use Folio with your legal guardian's
+            permission. If we learn we hold data from a child under 14 without that permission, we will delete it.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">11.</span> Changes to this policy</h2>
+          <p class="text-wrap-pretty">
+            If we make significant changes, we will notify you in the app or by email before they take effect. The
+            date at the top shows the last update.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-3.5">
+          <h2 class="text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink"><span class="text-brand">12.</span> Contact</h2>
+          <p class="text-wrap-pretty">
+            Carlos Villadiego · Medellín, Colombia ·
+            <a href="mailto:info@folioapp.lat" class="underline underline-offset-[3px]">info@folioapp.lat</a>
+          </p>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <Footer />
+</Layout>
