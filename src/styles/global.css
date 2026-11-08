@@ -20,8 +20,25 @@
 }
 
 @layer base {
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+  }
+
   body {
     -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-yellow);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2.5px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 6px;
   }
 
   a {
@@ -74,4 +91,16 @@
 
 .animate-float-c {
   animation: float-c 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float-a,
+  .animate-float-b,
+  .animate-float-c {
+    animation: none;
+  }
 }

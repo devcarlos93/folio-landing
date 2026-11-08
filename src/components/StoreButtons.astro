@@ -1,0 +1,67 @@
+---
+// Botones de App Store y Google Play. Las URLs viven en src/config/links.ts;
+// mientras estén vacías, cada botón se muestra como "Próximamente" y no es un enlace.
+import { APP_STORE_URL, PLAY_STORE_URL } from "../config/links";
+import { strings } from "../i18n/strings";
+
+interface Props {
+  // "light": sobre fondo claro (hero). "brand": sobre el rojo de la marca (descargar).
+  tone?: "light" | "brand";
+  class?: string;
+}
+
+const { tone = "light", class: className } = Astro.props;
+const s = strings.es;
+
+const stores = [
+  { id: "apple", name: "App Store", url: APP_STORE_URL },
+  { id: "google", name: "Google Play", url: PLAY_STORE_URL },
+] as const;
+---
+
+<div class:list={["flex flex-wrap justify-center gap-3", className]}>
+  {
+    stores.map((store, i) => {
+      const live = store.url !== "";
+      const primary = i === 0;
+      const Tag = live ? "a" : "div";
+      const look =
+        tone === "brand"
+          ? primary
+            ? "bg-ink text-card"
+            : "bg-card text-ink"
+          : primary
+            ? "bg-ink text-card"
+            : "border-[1.5px] border-ink text-ink";
+      return (
+        <Tag
+          href={live ? store.url : undefined}
+          target={live ? "_blank" : undefined}
+          rel={live ? "noopener" : undefined}
+          data-store-soon={live ? undefined : store.name}
+          class:list={[
+            "store-btn flex h-[58px] min-w-[176px] items-center gap-3 rounded-full px-6 text-left",
+            look,
+            !live && "cursor-default",
+          ]}
+        >
+          {store.id === "apple" ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16.37 12.64c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.38-3.68zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.27z" />
+            </svg>
+          ) : (
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4 2.8v18.4c0 .5.5.8.9.6L20.6 13c.5-.3.5-1 0-1.3L4.9 2.2c-.4-.2-.9.1-.9.6z" />
+            </svg>
+          )}
+          <span class="flex flex-col leading-none">
+            <span class="text-[12px] font-semibold opacity-75" data-i18n={live ? "storeOn" : "storeSoon"}>
+              {live ? s.storeOn : s.storeSoon}
+            </span>
+            <span class="mt-1 text-[17px] font-bold">{store.name}</span>
+          </span>
+        </Tag>
+      );
+    })
+  }
+</div>

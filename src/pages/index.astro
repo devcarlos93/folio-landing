@@ -4,22 +4,32 @@ import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
 import HowItWorks from "../components/HowItWorks.astro";
 import Spaces from "../components/Spaces.astro";
+import SharedSpaces from "../components/SharedSpaces.astro";
+import Payday from "../components/Payday.astro";
 import RemindersSummary from "../components/RemindersSummary.astro";
+import DataPrivacy from "../components/DataPrivacy.astro";
 import Pricing from "../components/Pricing.astro";
+import Faq from "../components/Faq.astro";
 import DownloadCTA from "../components/DownloadCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout
-  title="Folio — Todas tus cuentas, cada una en su espacio"
-  description="Escanea tus facturas, ordénalas por espacio y recibe un aviso antes de que venzan. Folio lleva la cuenta para que tú no tengas que hacerlo."
+  title="Folio: todas tus cuentas, cada una en su espacio"
+  description="Tómale una foto a la factura y Folio la lee, la guarda en su espacio y te avisa antes de que venza. Sin crear cuenta, sin anuncios y sin conectar tu banco. Comparte gastos con hasta 5 personas."
 >
   <Nav />
-  <Hero />
-  <HowItWorks />
-  <Spaces />
-  <RemindersSummary />
-  <Pricing />
-  <DownloadCTA />
+  <main>
+    <Hero />
+    <HowItWorks />
+    <Spaces />
+    <SharedSpaces />
+    <Payday />
+    <RemindersSummary />
+    <DataPrivacy />
+    <Pricing />
+    <Faq />
+    <DownloadCTA />
+  </main>
   <Footer />
 </Layout>

@@ -1,0 +1,237 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LegalNav from "../components/LegalNav.astro";
+import Footer from "../components/Footer.astro";
+import { CONTACT_EMAIL, MANAGE_SUBSCRIPTION as SUB } from "../config/links";
+
+// Página pública para borrar la cuenta y los datos (la pide Google Play).
+// Mantener alineada con app/delete-account.tsx y la sección 6 de folio/legal/privacidad.md.
+const h2 = "text-2xl font-extrabold leading-[1.15] tracking-[-.6px] text-ink";
+const ul = "flex list-disc flex-col gap-2 pl-[22px]";
+const ol = "flex list-decimal flex-col gap-2 pl-[22px]";
+const a = "underline underline-offset-[3px]";
+const mailEs = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Eliminar mi cuenta de Folio")}`;
+const mailEn = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Delete my Folio account")}`;
+---
+
+<Layout
+  title="Eliminar tu cuenta de Folio"
+  description="Cómo eliminar tu cuenta de Folio y tus datos: desde la app o por correo. Qué se borra, cuándo y qué pasa con tu suscripción."
+>
+  <LegalNav />
+  <main>
+    <!-- ES -->
+    <div data-lang-block="es">
+      <header class="mx-auto max-w-[760px] px-5 pb-8 pt-10 sm:px-10 sm:pb-12 sm:pt-[clamp(40px,6vw,72px)]">
+        <h1 class="text-[clamp(40px,6vw,72px)] font-extrabold leading-[1] tracking-[-0.04em] text-wrap-balance">
+          Eliminar tu cuenta de Folio
+        </h1>
+        <div class="mt-4.5 text-base text-ink-soft">Última actualización: 7 de noviembre de 2026</div>
+      </header>
+
+      <div class="bg-card px-5 py-10 sm:px-10 sm:py-[clamp(40px,6vw,72px)] sm:pb-[clamp(72px,9vw,112px)]">
+        <article class="mx-auto flex max-w-[720px] flex-col gap-11 text-[17px] leading-[1.6] text-[#2B2A26]">
+          <p class="text-[19px] text-ink text-wrap-pretty">
+            Puedes borrar tu cuenta de Folio y todos tus datos cuando quieras, desde la app y sin escribirnos. Aquí te
+            explicamos cómo, qué se borra y qué pasa con tu suscripción.
+          </p>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">1.</span> Si tienes cuenta</h2>
+            <ol class={ol}>
+              <li>Abre Folio y entra en <b>Ajustes</b>.</li>
+              <li>Toca <b>Eliminar cuenta</b>.</li>
+              <li>Lee lo que se va a borrar y escribe <b>ELIMINAR</b> para confirmar (en la app en inglés, <b>DELETE</b>).</li>
+              <li>Toca <b>Eliminar mi cuenta</b>. Necesitas conexión a internet.</li>
+            </ol>
+            <p class="text-wrap-pretty">Es permanente y no se puede deshacer.</p>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">2.</span> Si usas Folio sin cuenta</h2>
+            <p class="text-wrap-pretty">
+              Tus facturas están solo en tu teléfono. Para borrarlas, ve a <b>Ajustes → Borrar mis datos</b> y
+              confirma escribiendo <b>ELIMINAR</b>. Necesitas conexión a internet, porque también se borra el
+              identificador interno anónimo que Folio usa para la lectura con IA y las compras.
+            </p>
+            <p class="text-wrap-pretty">
+              En iPhone, el respaldo en iCloud está en tu cuenta de iCloud, que controla Apple. Si también quieres
+              borrarlo, hazlo desde los Ajustes del iPhone: tu nombre → iCloud → Administrar almacenamiento → Folio.
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">3.</span> Qué se borra y cuándo</h2>
+            <ul class={ul}>
+              <li>Tus espacios, facturas, gastos recurrentes y tu día de pago, en el teléfono y en la nube.</li>
+              <li>Las fotos de tus facturas y comprobantes, en la nube y en el teléfono.</li>
+              <li>Tu cuenta: correo, nombre e inicio de sesión con Apple o Google.</li>
+              <li><b>Todo se borra de inmediato.</b> Las copias de seguridad de nuestro proveedor pueden conservar datos hasta 30 días más, hasta que se reemplazan.</li>
+            </ul>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">4.</span> Espacios compartidos</h2>
+            <ul class={ul}>
+              <li><b>Los espacios compartidos que creaste</b> pasan a otra persona del espacio, que queda como dueña, con las facturas que creaste ahí pero sin tus fotos.</li>
+              <li><b>En los espacios de otras personas</b>, las facturas que creaste se quedan en el espacio, a nombre de su dueño y sin tus fotos.</li>
+              <li>Los pagos que se registraron entre ustedes siguen en el saldo del espacio para los demás.</li>
+            </ul>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">5.</span> Tu suscripción no se cancela sola</h2>
+            <p class="text-wrap-pretty">
+              <b>Eliminar la cuenta o desinstalar la app no cancela Pro.</b> Las suscripciones las cobra la tienda,
+              así que debes cancelarla allí para que no te vuelvan a cobrar:
+            </p>
+            <ul class={ul}>
+              <li>
+                <b>iPhone:</b> Ajustes → tu nombre → Suscripciones → Folio → Cancelar suscripción.
+                <a href={SUB.apple} class={a} target="_blank" rel="noopener">Abrir tus suscripciones</a> ·
+                <a href={SUB.appleHelpEs} class={a} target="_blank" rel="noopener">Ayuda de Apple</a>
+              </li>
+              <li>
+                <b>Android:</b> Google Play → tu foto de perfil → Pagos y suscripciones → Suscripciones → Folio →
+                Cancelar suscripción.
+                <a href={SUB.google} class={a} target="_blank" rel="noopener">Abrir tus suscripciones</a> ·
+                <a href={SUB.googleHelpEs} class={a} target="_blank" rel="noopener">Ayuda de Google</a>
+              </li>
+            </ul>
+            <p class="text-wrap-pretty">Al cancelar, conservas Pro hasta el final del periodo que ya pagaste.</p>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">6.</span> Si no puedes entrar a la app</h2>
+            <p class="text-wrap-pretty">
+              Escríbenos a <a href={mailEs} class={a}>{CONTACT_EMAIL}</a> <b>desde el correo de tu cuenta</b>, con el
+              asunto “Eliminar mi cuenta de Folio”. Así comprobamos que la cuenta es tuya. Borramos la cuenta y sus
+              datos como se explica arriba y te confirmamos por correo, en un máximo de 15 días hábiles.
+            </p>
+            <p class="text-wrap-pretty">
+              Si entraste con Apple usando “Ocultar mi correo”, escríbenos desde el correo de tu Apple ID y cuéntanos
+              cuándo creaste la cuenta, para poder encontrarla.
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">7.</span> Más información</h2>
+            <p class="text-wrap-pretty">
+              Lee la <a href="/privacidad" class={a}>Política de privacidad</a> y los
+              <a href="/terminos" class={a}>Términos y condiciones</a>. Responsable: Carlos Villadiego · Medellín,
+              Colombia · <a href={`mailto:${CONTACT_EMAIL}`} class={a}>{CONTACT_EMAIL}</a>
+            </p>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <!-- EN -->
+    <div data-lang-block="en" class="hidden">
+      <header class="mx-auto max-w-[760px] px-5 pb-8 pt-10 sm:px-10 sm:pb-12 sm:pt-[clamp(40px,6vw,72px)]">
+        <h1 class="text-[clamp(40px,6vw,72px)] font-extrabold leading-[1] tracking-[-0.04em] text-wrap-balance">
+          Delete your Folio account
+        </h1>
+        <div class="mt-4.5 text-base text-ink-soft">Last updated: November 7, 2026</div>
+      </header>
+
+      <div class="bg-card px-5 py-10 sm:px-10 sm:py-[clamp(40px,6vw,72px)] sm:pb-[clamp(72px,9vw,112px)]">
+        <article class="mx-auto flex max-w-[720px] flex-col gap-11 text-[17px] leading-[1.6] text-[#2B2A26]">
+          <p class="text-[19px] text-ink text-wrap-pretty">
+            You can delete your Folio account and all your data at any time, from the app and without writing to us.
+            Here’s how, what gets deleted and what happens to your subscription.
+          </p>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">1.</span> If you have an account</h2>
+            <ol class={ol}>
+              <li>Open Folio and go to <b>Settings</b>.</li>
+              <li>Tap <b>Delete account</b>.</li>
+              <li>Read what will be deleted and type <b>DELETE</b> to confirm (<b>ELIMINAR</b> if your app is in Spanish).</li>
+              <li>Tap <b>Delete my account</b>. You need an internet connection.</li>
+            </ol>
+            <p class="text-wrap-pretty">It’s permanent and can’t be undone.</p>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">2.</span> If you use Folio without an account</h2>
+            <p class="text-wrap-pretty">
+              Your bills are only on your phone. To delete them, go to <b>Settings → Delete my data</b> and confirm by
+              typing <b>DELETE</b>. You need an internet connection, because the anonymous internal identifier Folio uses
+              for AI reading and purchases is deleted too.
+            </p>
+            <p class="text-wrap-pretty">
+              On iPhone, the iCloud backup lives in your iCloud account, which Apple controls. If you want to delete it
+              too, do it from the iPhone’s Settings: your name → iCloud → Manage Storage → Folio.
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">3.</span> What gets deleted and when</h2>
+            <ul class={ul}>
+              <li>Your spaces, bills, recurring bills and your payday, on your phone and in the cloud.</li>
+              <li>Photos of your bills and receipts, in the cloud and on your phone.</li>
+              <li>Your account: email, name and Apple or Google sign-in.</li>
+              <li><b>Everything is deleted immediately.</b> Our provider’s backups may keep data for up to 30 more days, until they are replaced.</li>
+            </ul>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">4.</span> Shared spaces</h2>
+            <ul class={ul}>
+              <li><b>Shared spaces you created</b> go to another person in the space, who becomes the owner, with the bills you created there but without your photos.</li>
+              <li><b>In other people’s spaces</b>, the bills you created stay in the space, under the owner’s name and without your photos.</li>
+              <li>Payments recorded between you stay in the space’s balance for everyone else.</li>
+            </ul>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">5.</span> Your subscription isn’t cancelled automatically</h2>
+            <p class="text-wrap-pretty">
+              <b>Deleting your account or uninstalling the app doesn’t cancel Pro.</b> Subscriptions are charged by the
+              store, so you need to cancel there to stop being charged:
+            </p>
+            <ul class={ul}>
+              <li>
+                <b>iPhone:</b> Settings → your name → Subscriptions → Folio → Cancel Subscription.
+                <a href={SUB.apple} class={a} target="_blank" rel="noopener">Open your subscriptions</a> ·
+                <a href={SUB.appleHelpEn} class={a} target="_blank" rel="noopener">Apple help</a>
+              </li>
+              <li>
+                <b>Android:</b> Google Play → your profile picture → Payments &amp; subscriptions → Subscriptions →
+                Folio → Cancel subscription.
+                <a href={SUB.google} class={a} target="_blank" rel="noopener">Open your subscriptions</a> ·
+                <a href={SUB.googleHelpEn} class={a} target="_blank" rel="noopener">Google help</a>
+              </li>
+            </ul>
+            <p class="text-wrap-pretty">After cancelling, you keep Pro until the end of the period you already paid for.</p>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">6.</span> If you can’t get into the app</h2>
+            <p class="text-wrap-pretty">
+              Write to <a href={mailEn} class={a}>{CONTACT_EMAIL}</a> <b>from your account’s email</b>, with the subject
+              “Delete my Folio account”. That’s how we confirm the account is yours. We delete the account and its
+              data as described above and confirm by email within 15 business days at most.
+            </p>
+            <p class="text-wrap-pretty">
+              If you signed in with Apple using “Hide My Email”, write from your Apple ID email and tell us roughly
+              when you created the account, so we can find it.
+            </p>
+          </section>
+
+          <section class="flex flex-col gap-3.5">
+            <h2 class={h2}><span class="text-brand">7.</span> More information</h2>
+            <p class="text-wrap-pretty">
+              Read the <a href="/privacidad" class={a}>Privacy Policy</a> and the
+              <a href="/terminos" class={a}>Terms of Service</a>. Controller: Carlos Villadiego · Medellín, Colombia ·
+              <a href={`mailto:${CONTACT_EMAIL}`} class={a}>{CONTACT_EMAIL}</a>
+            </p>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

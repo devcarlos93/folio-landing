@@ -1,0 +1,65 @@
+---
+import PixelFrame from "./devices/PixelFrame.astro";
+import { strings } from "../i18n/strings";
+import { screens } from "../config/screens";
+
+const s = strings.es;
+const points = ["pd1", "pd2", "pd3", "pd4"] as const;
+---
+
+<section id="dia-de-pago" class="px-5 py-[clamp(72px,10vw,128px)] sm:px-10">
+  <div
+    class="mx-auto grid max-w-[1120px] items-center gap-x-[clamp(40px,6vw,80px)] gap-y-14"
+    style="grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))"
+  >
+    <div>
+      <h2
+        class="text-[clamp(36px,5vw,64px)] font-extrabold leading-[1] tracking-[-0.035em] text-wrap-balance"
+        data-i18n="pdH"
+      >
+        {s.pdH}
+      </h2>
+      <p class="mt-5 max-w-[520px] text-[19px] leading-[1.5] text-ink-soft text-wrap-pretty" data-i18n="pdB">{s.pdB}</p>
+      <ul class="mt-7 grid max-w-[520px] gap-3 text-[17px] leading-[1.45]">
+        {
+          points.map((k) => (
+            <li class="flex gap-2.5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E2261D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="mt-[3px] shrink-0" aria-hidden="true">
+                <path d="M5 12.5l4.5 4.5L19 7" />
+              </svg>
+              <span data-i18n={k}>{s[k]}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="relative mx-auto flex w-full max-w-[460px] flex-col items-center">
+      <div
+        class="absolute left-1/2 top-[42%] aspect-square w-[min(480px,110%)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow opacity-70"
+        aria-hidden="true"
+      >
+      </div>
+      <PixelFrame src={screens.payday.src} alt={screens.payday.altEs} altKey="altPayday" width={290} class="relative" />
+
+      <div
+        class="relative z-10 -mt-24 w-[min(310px,100%)] rounded-[22px] bg-ink p-4 text-left text-card shadow-[0_18px_36px_rgba(20,20,18,.2)] sm:absolute sm:bottom-12 sm:right-0 sm:mt-0 sm:rotate-2"
+      >
+        <div class="flex items-center justify-between gap-3">
+          <div class="text-[13px] font-bold text-muted" data-i18n="exPdTitle">{s.exPdTitle}</div>
+          <div class="rounded-full border border-card/30 px-2 py-0.5 text-[11px] font-bold text-muted" data-i18n="exTag">{s.exTag}</div>
+        </div>
+        <div class="mt-3 grid gap-2 text-[14px]">
+          <div class="flex justify-between gap-3 border-b border-card/15 pb-2"><span data-i18n="exPdPay">{s.exPdPay}</span><span class="font-bold">$2.500.000</span></div>
+          <div class="flex justify-between gap-3"><span data-i18n="exPdRent">{s.exPdRent}</span><span class="font-bold">−$1.200.000</span></div>
+          <div class="flex justify-between gap-3"><span data-i18n="energy">{s.energy}</span><span class="font-bold">−$187.450</span></div>
+          <div class="flex justify-between gap-3 border-b border-card/15 pb-2.5"><span>Internet</span><span class="font-bold">−$90.000</span></div>
+        </div>
+        <div class="mt-2.5 flex items-baseline justify-between gap-3">
+          <span class="text-[14px] font-bold" data-i18n="exPdLeft">{s.exPdLeft}</span>
+          <span class="text-[22px] font-extrabold tracking-[-.4px] text-yellow">$1.022.550</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

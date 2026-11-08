@@ -1,0 +1,58 @@
+---
+import { strings } from "../i18n/strings";
+
+const s = strings.es;
+const qs = [
+  ["q1", "a1"],
+  ["q2", "a2"],
+  ["q3", "a3"],
+  ["q4", "a4"],
+  ["q5", "a5"],
+  ["q6", "a6"],
+  ["q7", "a7"],
+] as const;
+---
+
+<section id="preguntas" class="px-5 py-[clamp(72px,10vw,128px)] sm:px-10">
+  <div class="mx-auto max-w-[760px]">
+    <h2
+      class="text-[clamp(32px,4vw,52px)] font-extrabold leading-[1.02] tracking-[-0.035em] text-wrap-balance"
+      data-i18n="faqH"
+    >
+      {s.faqH}
+    </h2>
+    <div class="mt-8 border-t border-ink/15">
+      {
+        qs.map(([q, a]) => (
+          <details class="faq group border-b border-ink/15">
+            <summary class="flex min-h-[64px] cursor-pointer list-none items-center justify-between gap-4 py-4 text-[18px] font-bold leading-[1.3]">
+              <span data-i18n={q}>{s[q]}</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </summary>
+            <p class="max-w-[640px] pb-5 text-[17px] leading-[1.55] text-ink-soft text-wrap-pretty" data-i18n={a}>{s[a]}</p>
+          </details>
+        ))
+      }
+      <details class="faq group border-b border-ink/15">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center justify-between gap-4 py-4 text-[18px] font-bold leading-[1.3]">
+          <span data-i18n="q8">{s.q8}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </summary>
+        <p class="max-w-[640px] pb-5 text-[17px] leading-[1.55] text-ink-soft text-wrap-pretty">
+          <span data-i18n="a8">{s.a8}</span>
+          <a href="/eliminar-cuenta" class="font-bold text-ink underline underline-offset-[3px]" data-i18n="a8Link">{s.a8Link}</a>.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

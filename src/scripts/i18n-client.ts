@@ -22,11 +22,18 @@ function applyLang() {
     if (value !== undefined) el.textContent = value;
   });
 
+  document.querySelectorAll<HTMLImageElement>("img[data-i18n-alt]").forEach((el) => {
+    const key = el.dataset.i18nAlt as keyof (typeof strings)["es"];
+    const value = strings[lang][key];
+    if (value !== undefined) el.alt = value;
+  });
+
   document.querySelectorAll<HTMLElement>("[data-lang-option]").forEach((el) => {
     const isActive = el.dataset.langOption === lang;
     el.classList.toggle("bg-ink", isActive);
     el.classList.toggle("text-card", isActive);
     el.classList.toggle("text-ink", !isActive);
+    el.setAttribute("aria-pressed", String(isActive));
   });
 
   document.querySelectorAll<HTMLElement>("[data-lang-block]").forEach((el) => {
@@ -56,6 +63,7 @@ function applyPricing() {
     el.classList.toggle("bg-ink", isActive);
     el.classList.toggle("text-card", isActive);
     el.classList.toggle("text-ink", !isActive);
+    el.setAttribute("aria-pressed", String(isActive));
   });
 }
 
